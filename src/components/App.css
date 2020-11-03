@@ -1,0 +1,26 @@
+/* GLOBAL */
+.button {
+  border: none;
+  background: none;
+  outline: none;
+  text-align: left;
+  font-size: 1.8rem;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  color: #333333;
+}
+.button--current {
+  background-color: #f2f2f2;
+}
+.button:hover {
+  background-color: #f2f2f2;
+}
+.button:active {
+  background-color: #bdbdbd;
+}
+.main-container {
+  display: flex;
+  height: 100%;
+}
+

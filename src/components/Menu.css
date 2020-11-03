@@ -1,0 +1,73 @@
+.Menu {
+  width: 32rem;
+  background-color: #e5e5e5;
+  padding: 6rem 1.5rem;
+}
+.status {
+  display: flex;
+  flex-direction: column;
+}
+.status__button {
+  display: flex;
+  align-items: center;
+  padding: 0.8rem 1rem 0.8rem 1.3rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+}
+.status-icon {
+  width: 24px;
+  height: 24px;
+}
+.status__icon {
+  margin-right: 1.3rem;
+}
+.status__icon--new {
+  background-image: url(../img/icons.svg);
+  background-position: -3px -3px;
+}
+.status__icon--done {
+  background-image: url(../img/icons.svg);
+  background-position: -48px -3px;
+}
+.status__icon--all {
+  background-image: url(../img/icons.svg);
+  background-position: -90px -3px;
+}
+.Menu__block-buttons {
+  margin-bottom: 2rem;
+}
+.Menu__main-btn {
+  margin-bottom: 1rem;
+}
+.priority-container {
+  display: none;
+}
+.priority-container--opened {
+  display: flex;
+  flex-direction: column;
+}
+.priority__btn {
+  padding: 0.95rem 1rem 0.95rem 5rem;
+  border-radius: 0.5rem;
+  font-weight: 400;
+}
+.main-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #c4c4c4;
+}
+.main-btn__icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 1rem;
+}
+.main-btn__icon--opened {
+  background-image: url(../img/icons.svg);
+  background-position: -129px -40px;
+}
+.main-btn__icon--closed {
+  background-image: url(../img/icons.svg);
+  background-position: -44px -40px;
+}
