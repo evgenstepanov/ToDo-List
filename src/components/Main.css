@@ -1,68 +1,11 @@
 .Main {
-  width: 100%;
   flex: 1 0;
   background-color: #f2f2f2;
   padding: 6rem 2rem;
-  color: #4f4f4f;
 }
-.todos-title {
-  display: flex;
-  justify-content: space-between;
-  font-weight: 500;
-}
-.todos-title__name {
-  flex-grow: 1;
-  flex-basis: 582px;
-  margin-right: 2rem;
-  padding-left: 4rem;
-}
-.todos-title__date {
-  flex-basis: 163px;
-  margin-right: 2rem;
-}
-.todos-title__priority {
-  flex-basis: 255px;
-  margin-right: 4rem;
-}
-.todo {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  margin-top: 2rem;
-  padding: 2rem 0rem 0;
-}
-.todo__icon {
-  margin-bottom: 0.4rem;
-}
-.todo__color {
-  width: 100%;
-  height: 8px;
-  border-radius: 4px;
-}
-.icons {
-  position: absolute;
-}
-.icons-status {
-  width: 24px;
-  height: 24px;
-}
-.todo__text {
-  flex-grow: 1;
-  flex-basis: 582px;
-  margin-right: 2rem;
-  padding-left: 4rem;
-}
-.todo__calendar {
-  flex-basis: 163px;
-  margin-right: 2rem;
-}
-.todo__description {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 300px;
-}
-.todo__priority {
-  flex-basis: 255px;
-  margin-right: 4rem;
+
+@media (max-width: 320px) {
+  .Main {
+    padding: 1.5rem 1rem;
+  }
 }

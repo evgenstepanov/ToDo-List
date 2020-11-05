@@ -19,8 +19,70 @@
 .button:active {
   background-color: #bdbdbd;
 }
+
+.text--dark-color {
+  color: #333333;
+}
+.text--medium-color {
+  color: #4f4f4f;
+}
+.text--light-color {
+  color: #828282;
+}
+.text--extra-light-color {
+  color: #f2f2f2;
+}
+.text--light-weight {
+  font-weight: 300;
+}
+.text--regular-weight {
+  font-weight: 400;
+}
+.text--medium-weight {
+  font-weight: 500;
+}
+.text--bold-weight {
+  font-weight: 700;
+}
+.text--black-weight {
+  font-weight: 900;
+}
+.text--size-small {
+  font-size: 1.4rem;
+}
+.text--size-regular {
+  font-size: 1.8rem;
+}
+.text--size-medium {
+  font-size: 2.4rem;
+}
+.text--size-big {
+  font-size: 3.6rem;
+}
+.text--size-huge {
+  font-size: 4.8rem;
+}
 .main-container {
   display: flex;
-  height: 100%;
+  flex: 1;
 }
-
+.icon--new {
+  background-image: url(../img/icons.svg);
+  background-position: -3px -3px;
+}
+.icon--done {
+  background-image: url(../img/icons.svg);
+  background-position: -48px -3px;
+}
+.icon--all {
+  background-image: url(../img/icons.svg);
+  background-position: -90px -3px;
+}
+.icon--delete {
+  background-image: url(../img/icons.svg);
+  background-position: -177px -3px;
+}
+.icon--edit {
+  background-image: url(../img/icons.svg);
+  background-position: -132px -3px;
+}

@@ -4,24 +4,26 @@ import { StoreContext } from '../store';
 
 export default function Menu() {
   const {
-    menu: [menu],
+    statusFilter: [statusFilter],
     priority: [priority],
-    priorityIsOpen: [priorityIsOpen],
+    priorityIsOpen: [priorityIsOpen, setPriorityIsOpen],
+    filterStatus,
   } = React.useContext(StoreContext);
 
   return (
     <div className='Menu'>
       <div className='status Menu__block-buttons'>
-        {menu.map(item => {
+        {statusFilter.map(item => {
           return (
             <button
               key={item.name}
               className={`button status__button ${
                 item.current ? 'button--current' : ''
-              }`}
+              } text--medium-weight`}
+              onClick={() => filterStatus(item.type)}
             >
               <div
-                className={`status-icon status__icon status__icon--${item.className}`}
+                className={`status-icon status__icon icon--${item.type}`}
               ></div>
               {item.name}
             </button>
@@ -29,8 +31,15 @@ export default function Menu() {
         })}
       </div>
       <div className='priority'>
-        <button className='main-btn Menu__main-btn button'>
-          <div className='main-btn__icon main-btn__icon--closed'></div>
+        <button
+          className='main-btn Menu__main-btn button'
+          onClick={() => setPriorityIsOpen(!priorityIsOpen)}
+        >
+          <div
+            className={`main-btn__icon main-btn__icon--${
+              priorityIsOpen ? 'opened' : 'closed'
+            }`}
+          ></div>
           Приоритет
         </button>
         <div
@@ -42,9 +51,9 @@ export default function Menu() {
             return (
               <button
                 key={item.name}
-                className={`button priority__btn  ${
+                className={`button priority__btn ${
                   item.current ? 'button--current' : ''
-                }`}
+                } text--regular-weight`}
               >
                 {item.name}
               </button>

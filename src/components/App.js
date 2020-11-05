@@ -3,6 +3,7 @@ import Header from './Header';
 import Menu from './Menu';
 import Main from './Main';
 import StoreProvider from '../store';
+import ModalBlock from './ModalBlock';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Menu />
           <Main />
         </div>
+        <ModalBlock />
       </StoreProvider>
     </>
   );

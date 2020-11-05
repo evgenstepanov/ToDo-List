@@ -12,7 +12,6 @@
   align-items: center;
   padding: 0.8rem 1rem 0.8rem 1.3rem;
   border-radius: 0.5rem;
-  font-weight: 500;
 }
 .status-icon {
   width: 24px;
@@ -20,18 +19,6 @@
 }
 .status__icon {
   margin-right: 1.3rem;
-}
-.status__icon--new {
-  background-image: url(../img/icons.svg);
-  background-position: -3px -3px;
-}
-.status__icon--done {
-  background-image: url(../img/icons.svg);
-  background-position: -48px -3px;
-}
-.status__icon--all {
-  background-image: url(../img/icons.svg);
-  background-position: -90px -3px;
 }
 .Menu__block-buttons {
   margin-bottom: 2rem;
@@ -49,7 +36,6 @@
 .priority__btn {
   padding: 0.95rem 1rem 0.95rem 5rem;
   border-radius: 0.5rem;
-  font-weight: 400;
 }
 .main-btn {
   width: 100%;
@@ -70,4 +56,12 @@
 .main-btn__icon--closed {
   background-image: url(../img/icons.svg);
   background-position: -44px -40px;
+}
+@media (max-width: 320px) {
+  .Menu {
+    position: absolute;
+  }
+  .todo__text{
+    max-width: 117px;
+  }
 }
