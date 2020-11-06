@@ -25,13 +25,13 @@ export default function ModalBlock() {
     return (
       <div className='ModalBlock'>
         <form className='modal-form'>
-          <h1 className='modal-form__title text--dark-color text--size-big text--regular-weight'>
+          <h1 className='modal-title modal-form__item text_dark-color text_size-big text_regular-weight'>
             {editMode ? 'Редактирование задачи' : 'Создание задачи'}
           </h1>
-          <label className='label modal-form__name'>
-            <div className='label__text text--size-small'>Название</div>
+          <label className='modal-label modal-form__item modal-form__name'>
+            <div className='modal-label__text text_size-small'>Название</div>
             <input
-              className={`input modal-form__input-name text--size-regular${
+              className={`input modal-form__input-name text_size-regular${
                 nameIsValid ? '' : ' warning'
               }`}
               type='text'
@@ -41,16 +41,16 @@ export default function ModalBlock() {
               onChange={handleInput}
             ></input>
             {nameIsValid ? null : (
-              <p className='modal-form__warning text--size-small'>
+              <p className='modal-form__warning text_size-small'>
                 Вы не указали название
               </p>
             )}
           </label>
-          <label className='label modal-form__date text--size-small'>
-            <div className='label__text text--size-small'>Дедлайн</div>
-            <div className='input-icon input-icon--calendar'></div>
+          <label className='modal-label modal-form__date text_size-small'>
+            <div className='modal-label__text text_size-small'>Дедлайн</div>
+            <div className='input-icon input-icon_calendar'></div>
             <input
-              className='input modal-form__input-date text--size-regular'
+              className='input modal-form__input-date text_size-regular'
               type='text'
               name='date'
               placeholder='ДД.ММ.ГГГГ, ММ:ЧЧ'
@@ -58,11 +58,11 @@ export default function ModalBlock() {
               onChange={handleInput}
             ></input>
           </label>
-          <label className='label modal-form__priority text--size-small'>
-            <div className='label__text text--size-small'>Приоритет</div>
-            <div className='input-icon input-icon--arrow'></div>
+          <label className='modal-label modal-form__item modal-form__priority text_size-small'>
+            <div className='modal-label__text text_size-small'>Приоритет</div>
+            <div className='input-icon input-icon_arrow'></div>
             <select
-              className='input modal-form__input-priority text--size-regular'
+              className='input modal-form__input-priority text_size-regular'
               type='text'
               name='priority'
               value={todoInEdit.priority}
@@ -73,24 +73,24 @@ export default function ModalBlock() {
               <option value='low'>Низкий</option>
             </select>
           </label>
-          <label className='label modal-form__color text--size-small'>
-            <div className='label__text text--size-small'>Метка</div>
+          <label className='modal-label modal-form__item modal-form__color text_size-small'>
+            <div className='modal-label__text text_size-small'>Метка</div>
             <div
-              className='input-icon input-icon--color'
+              className='input-icon input-icon_color'
               style={{ background: todoInEdit.color }}
             ></div>
             <input
-              className='input modal-form__input-color text--size-regular'
+              className='input modal-form__input-color text_size-regular'
               type='text'
               name='color'
               value={todoInEdit.color}
               onChange={handleInput}
             ></input>
           </label>
-          <label className='label modal-form__description text--size-small'>
-            <div className='label__text text--size-small'>Описание</div>
+          <label className='modal-label modal-form__item modal-form__description text_size-small'>
+            <div className='modal-label__text text_size-small'>Описание</div>
             <textarea
-              className='input modal-form__input-description text--size-regular'
+              className='input modal-form__input-description text_size-regular'
               type='text'
               rows='5'
               name='description'
@@ -101,12 +101,12 @@ export default function ModalBlock() {
           <div className='block-buttons modal-form__block-buttons'>
             {editMode ? (
               <button
-                className='button block-buttons__button--delete'
+                className='button block-buttons__button_delete'
                 onClick={() => deleteTodo(todoInEdit.id)}
               ></button>
             ) : null}
             <button
-              className='button modal-btn block-buttons__button--cancel'
+              className='button modal-btn block-buttons__button_cancel'
               onClick={e => {
                 e.preventDefault();
                 setModalIsOpen(false);
@@ -116,7 +116,7 @@ export default function ModalBlock() {
               Отменить
             </button>
             <button
-              className='button modal-btn block-buttons__button--save'
+              className='button modal-btn block-buttons__button_save'
               autoFocus
               onClick={func}
             >

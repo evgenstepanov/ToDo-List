@@ -12,9 +12,9 @@ export default function FullTodo() {
 
   return (
     <div className='full-todo'>
-      <div className='full-todo__header'>
+      <div className='todo-header full-todo__todo-header'>
         <Link className='full-todo__arrow-back' to='/'></Link>
-        <div className='full-todo__title text--size-medium text--medium-weight'>
+        <div className='full-todo__title text_size-medium text_medium-weight'>
           {todo.name}
         </div>
         <EditButton
@@ -38,25 +38,25 @@ export default function FullTodo() {
       </div>
       <div className='todo-info-bar full-todo__todo-info-bar'>
         <div className='todo-info-block'>
-          <div className='todo-info-block__title text--regular-weight text--size-small text--light-color'>
+          <div className='todo-info-block__title text_regular-weight text_size-small text_light-color'>
             Статус задачи
           </div>
           <div className='todo-info-block__data'>{todo.statusText}</div>
         </div>
         <div className='todo-info-block'>
-          <div className='todo-info-block__title text--regular-weight text--size-small text--light-color'>
+          <div className='todo-info-block__title text_regular-weight text_size-small text_light-color'>
             Приоритет
           </div>
           <div className='todo-info-block__data'>{todo.priorityText}</div>
         </div>
         <div className='todo-info-block'>
-          <div className='todo-info-block__title text--regular-weight text--size-small text--light-color'>
+          <div className='todo-info-block__title text_regular-weight text_size-small text_light-color'>
             Дедлайн
           </div>
           <div className='todo-info-block__data'>{todo.date}</div>
         </div>
-        <div className='todo-info-block todo-info-block--last'>
-          <div className='todo-info-block__title text--regular-weight text--size-small text--light-color'>
+        <div className='todo-info-block todo-info-block_last'>
+          <div className='todo-info-block__title text_regular-weight text_size-small text_light-color'>
             Метка
           </div>
           <div
@@ -65,7 +65,7 @@ export default function FullTodo() {
           ></div>
         </div>
       </div>
-      <div className='full-todo__description text--medium-color'>
+      <div className='full-todo__description text_medium-color'>
         {todo.description}
       </div>
     </div>

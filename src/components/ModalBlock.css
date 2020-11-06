@@ -16,13 +16,15 @@
   background: #f2f2f2;
   border-radius: 2rem;
 }
-.label {
+.modal-label {
   display: flex;
   flex-direction: column;
-  margin-bottom: 1rem;
   position: relative;
 }
-.label__text {
+.modal-form__modal-label {
+  margin-bottom: 1rem;
+}
+.modal-label__text {
   margin-bottom: 0.5rem;
 }
 .input {
@@ -31,9 +33,11 @@
   outline: none;
   border-radius: 1rem;
 }
-.modal-form__title {
+.modal-title {
   width: 100%;
   text-align: center;
+}
+.modal-form__item {
   margin-bottom: 1rem;
 }
 .modal-form__name {
@@ -69,17 +73,17 @@
   width: 30px;
   height: 30px;
 }
-.input-icon--arrow {
+.input-icon_arrow {
   top: 28px;
   right: 16px;
   background: url(../img/icons.svg) -128px -39px;
 }
-.input-icon--calendar {
+.input-icon_calendar {
   top: 28px;
   right: 16px;
   background: url(../img/icons.svg) 30px 0px;
 }
-.input-icon--color {
+.input-icon_color {
   width: 20px;
   height: 20px;
   top: 32px;
@@ -95,7 +99,7 @@
 .modal-btn {
   padding: 0.7rem 1rem;
 }
-.block-buttons__button--cancel {
+.block-buttons__button_cancel {
   margin-right: 1rem;
 }
 .modal-btn:focus {
@@ -114,7 +118,7 @@
 .modal-form__input-description {
   font-family: Roboto, sans-serif;
 }
-.block-buttons__button--delete {
+.block-buttons__button_delete {
   width: 30px;
   height: 30px;
   background: url(../img/icons.svg) 60px 0px;

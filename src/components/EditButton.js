@@ -24,9 +24,14 @@ export default function EditButton({ id, type, title, className }) {
   }
 
   return (
-    <button className='button edit-button' onClick={() => func(id)}>
-      <div className={`edit-button__icon status-icon icon--${className}`}></div>
-      <div className='edit-button__title text--size-small'>{title}</div>
+    <button
+      className='button edit-button todo-header__edit-button'
+      onClick={() => func(id)}
+    >
+      <div
+        className={`edit-button__icon-status icon-status icon-status_${className}`}
+      ></div>
+      <div className='text_size-small'>{title}</div>
     </button>
   );
 }

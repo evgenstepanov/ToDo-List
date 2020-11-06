@@ -46,15 +46,7 @@
   background: url(../img/icons.svg) -130px 3px;
   cursor: pointer;
 }
-.icons {
-  position: absolute;
-  top: 18px;
-  left: 3px;
-}
-.icons-status {
-  width: 24px;
-  height: 24px;
-}
+
 .todo__text {
   flex-grow: 1;
   flex-basis: 525px;

@@ -11,11 +11,11 @@ export default function Header() {
       <Link
         className='
       Header__logo 
-      Header__logo--outline-shadow 
-      Header__logo--shadow
-      text--extra-light-color
-      text--black-weight
-      text--size-huge'
+      Header__logo_outline-shadow 
+      Header__logo_shadow
+      text_extra-light-color
+      text_black-weight
+      text_size-huge'
         to='/'
       >
         To-Do List
@@ -23,8 +23,8 @@ export default function Header() {
       <button
         className='
       button button-plus 
-      Header__button--outline-shadow 
-      Header__button--shadow'
+      Header__button_outline-shadow 
+      Header__button_shadow'
         onClick={openModalwithNew}
       ></button>
     </header>

@@ -13,8 +13,8 @@ export default function TodoList() {
   } = React.useContext(StoreContext);
 
   return (
-    <div className='todo-list text--medium-color'>
-      <div className='todos-title-container text--medium-weight'>
+    <div className='todo-list text_medium-color'>
+      <div className='todos-title-container text_medium-weight'>
         <div className='todos-title todos-title__name'>Наименование</div>
         <div className='todos-title todos-title__date'>Дедлайн</div>
         <div className='todos-title todos-title__priority'>Приоритет</div>
@@ -25,7 +25,7 @@ export default function TodoList() {
             <li key={todo.id} className='todo'>
               <div className='icons'>
                 <div
-                  className={`status-icon todo__icon icon--${todo.status}`}
+                  className={`icon-status todo__icon icon-status_${todo.status}`}
                   onClick={() => toggleStatusTodo(todo.id)}
                 ></div>
                 <div
@@ -36,21 +36,21 @@ export default function TodoList() {
               <div className='todo__text'>
                 <div className='todo-text__container'>
                   <Link
-                    className='todo__name text--medium-weight text--medium-color'
+                    className='todo__name text_medium-weight text_medium-color'
                     to={`/${todo.slug}`}
                   >
                     {todo.name}
                   </Link>
-                  <div className='todo__description text--size-small'>
+                  <div className='todo__description text_size-small'>
                     {todo.description}
                   </div>
                 </div>
               </div>
               <div className='todo__calendar'>
-                <div className='todo__date text--regular-weight text--medium-color'>
+                <div className='todo__date text_regular-weight text_medium-color'>
                   {getDate(todo.date)}
                 </div>
-                <div className='todo__time text--size-small text--light-color'>
+                <div className='todo__time text_size-small text_light-color'>
                   {getTime(todo.date)}
                 </div>
               </div>

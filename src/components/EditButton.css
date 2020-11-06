@@ -3,18 +3,20 @@
   align-items: center;
   padding: 0.5rem 0.9rem 0.5rem 1.2rem;
   border: 1px solid #828282;
-  margin-left: 1rem;
   border-radius: 0.5rem;
   cursor: pointer;
 }
-.edit-button__icon {
+.todo-header__edit-button {
+  margin-left: 1rem;
+}
+.edit-button__icon-status {
   margin-right: 1.3rem;
 }
 @media (max-width: 1024px) {
   .edit-button__title {
     display: none;
   }
-  .edit-button__icon {
+  .edit-button__icon-status {
     margin: 0;
   }
   .edit-button {

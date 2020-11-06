@@ -1,8 +1,10 @@
-.full-todo__header {
+.todo-header {
   display: flex;
   align-items: center;
   padding-bottom: 2rem;
   border-bottom: 1px solid #c4c4c4;
+}
+.full-todo__todo-header {
   margin-bottom: 2rem;
 }
 .full-todo__arrow-back {
@@ -32,7 +34,7 @@
   margin-right: 4rem;
   border-right: 1px solid #c4c4c4;
 }
-.todo-info-block--last {
+.todo-info-block_last {
   padding: 0;
   margin: 0;
   border-right: none;
@@ -48,4 +50,3 @@
 .full-todo__description {
   text-align: justify;
 }
-

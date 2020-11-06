@@ -10,7 +10,7 @@
   font-weight: 500;
   color: #333333;
 }
-.button--current {
+.button_current {
   background-color: #f2f2f2;
 }
 .button:hover {
@@ -20,69 +20,69 @@
   background-color: #bdbdbd;
 }
 
-.text--dark-color {
+.text_dark-color {
   color: #333333;
 }
-.text--medium-color {
+.text_medium-color {
   color: #4f4f4f;
 }
-.text--light-color {
+.text_light-color {
   color: #828282;
 }
-.text--extra-light-color {
+.text_extra-light-color {
   color: #f2f2f2;
 }
-.text--light-weight {
+.text_light-weight {
   font-weight: 300;
 }
-.text--regular-weight {
+.text_regular-weight {
   font-weight: 400;
 }
-.text--medium-weight {
+.text_medium-weight {
   font-weight: 500;
 }
-.text--bold-weight {
+.text_bold-weight {
   font-weight: 700;
 }
-.text--black-weight {
+.text_black-weight {
   font-weight: 900;
 }
-.text--size-small {
+.text_size-small {
   font-size: 1.4rem;
 }
-.text--size-regular {
+.text_size-regular {
   font-size: 1.8rem;
 }
-.text--size-medium {
+.text_size-medium {
   font-size: 2.4rem;
 }
-.text--size-big {
+.text_size-big {
   font-size: 3.6rem;
 }
-.text--size-huge {
+.text_size-huge {
   font-size: 4.8rem;
 }
 .main-container {
   display: flex;
   flex: 1;
 }
-.icon--new {
+.icon-status_new {
   background-image: url(../img/icons.svg);
   background-position: -3px -3px;
 }
-.icon--done {
+.icon-status_done {
   background-image: url(../img/icons.svg);
   background-position: -48px -3px;
 }
-.icon--all {
+.icon-status_all {
   background-image: url(../img/icons.svg);
   background-position: -90px -3px;
 }
-.icon--delete {
+.icon-status_delete {
   background-image: url(../img/icons.svg);
   background-position: -177px -3px;
 }
-.icon--edit {
+.icon-status_edit {
   background-image: url(../img/icons.svg);
   background-position: -132px -3px;
 }
