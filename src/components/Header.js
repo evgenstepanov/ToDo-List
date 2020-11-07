@@ -4,11 +4,19 @@ import { Link } from 'react-router-dom';
 import { StoreContext } from '../store';
 
 export default function Header() {
-  const { openEmptyModal } = React.useContext(StoreContext);
+  const {
+    menuIsOpen: [menuIsOpen, setMenuIsOpen],
+    openEmptyModal,
+  } = React.useContext(StoreContext);
 
   return (
     <header className='Header'>
-      <button className='button'></button>
+      <button
+        className={`menu-button Header__menu-button menu-button_${
+          menuIsOpen ? 'opened' : 'closed'
+        }`}
+        onClick={() => setMenuIsOpen(!menuIsOpen)}
+      ></button>
       <Link
         className='logo Header__logo text_size-huge text_black-weight text_extra-light-color'
         to='/'
