@@ -9,7 +9,7 @@ export default function TodoList() {
     toggleStatusTodo,
     getTime,
     getDate,
-    getEditModal,
+    openEditModal,
   } = React.useContext(StoreContext);
 
   return (
@@ -31,10 +31,10 @@ export default function TodoList() {
         {filteredTodos.map(todo => {
           return (
             <tr key={todo.id} className='todo'>
-              <td className='todo__text'>
+              <td className='todo__text todo-cell'>
                 <div className='todo-icons'>
                   <div
-                    className={`icon-status icon-status_${todo.status} todo-icons__icon-status`}
+                    className={`icon icon_${todo.status} todo-icons__icon-status`}
                     onClick={() => toggleStatusTodo(todo.id)}
                   ></div>
                   <div
@@ -52,7 +52,7 @@ export default function TodoList() {
                   {todo.description}
                 </div>
               </td>
-              <td className='todo__calendar'>
+              <td className='todo__calendar todo-cell'>
                 <div className='todo__date text_regular-weight text_medium-color'>
                   {getDate(todo.date)}
                 </div>
@@ -60,11 +60,11 @@ export default function TodoList() {
                   {getTime(todo.date)}
                 </div>
               </td>
-              <td className='todo__priority'>
+              <td className='todo__priority todo-cell'>
                 {todo.priorityText}
                 <div
                   className='todo__edit'
-                  onClick={() => getEditModal(todo.id)}
+                  onClick={() => openEditModal(todo.id)}
                 ></div>
               </td>
             </tr>

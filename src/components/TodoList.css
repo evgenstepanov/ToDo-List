@@ -9,7 +9,7 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 500px;
+  max-width: 411px;
   width: 100%;
   color: #828282;
 }
@@ -19,6 +19,10 @@
 }
 .table-todo__header-cell_first {
   padding-left: 4rem;
+}
+.todo-cell {
+  padding: 1rem 0;
+  vertical-align: text-bottom;
 }
 .todo__text {
   position: relative;
@@ -43,8 +47,49 @@
   position: absolute;
   top: 25px;
   right: 0px;
-  width: 30px;
-  height: 30px;
+  width: 24px;
+  height: 24px;
   background: url(../img/icons.svg) -130px -1px;
   cursor: pointer;
+}
+@media (max-width: 1130px) {
+  .todo__description {
+    max-width: 317px;
+  }
+}
+@media (max-width: 990px) {
+  .todo__description {
+    max-width: 100px;
+  }
+  .table-todo {
+    margin: 0 1rem;
+    width: calc(100% - 2rem);
+  }
+  .todo__text {
+    padding: 1rem 0 1rem 3rem;
+    width: 30%;
+  }
+  .todo-icons {
+    top: 7px;
+  }
+  .table-todo__header-cell {
+    padding-bottom: 0.5rem;
+    font-size: 1rem;
+  }
+  .table-todo__header-cell_first {
+    padding-left: 1rem;
+  }
+  .todo-cell {
+    font-size: 1.2rem;
+  }
+  .todo__description,
+  .todo__time {
+    font-size: 1rem;
+  }
+  .todo__edit {
+    top: 7px;
+  }
+  .todo-icons__icon-status {
+    margin-bottom: 0.1rem;
+  }
 }
