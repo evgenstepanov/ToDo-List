@@ -138,7 +138,35 @@ export default function ToDoProvider({ children }) {
     const target = e.target;
     const name = target.name;
     const value = target.value;
-    setTodoInEdit({ ...todoInEdit, [name]: value });
+    if (name === 'priority') {
+      switch (value) {
+        case 'high':
+          setTodoInEdit({
+            ...todoInEdit,
+            [name]: value,
+            priorityText: 'Высокий',
+          });
+          break;
+        case 'medium':
+          setTodoInEdit({
+            ...todoInEdit,
+            [name]: value,
+            priorityText: 'Средний',
+          });
+          break;
+        case 'low':
+          setTodoInEdit({
+            ...todoInEdit,
+            [name]: value,
+            priorityText: 'Низкий',
+          });
+          break;
+        default:
+          break;
+      }
+    } else {
+      setTodoInEdit({ ...todoInEdit, [name]: value });
+    }
     if (todoInEdit.name) setNameIsValid(true);
   };
 
@@ -167,10 +195,11 @@ export default function ToDoProvider({ children }) {
     setModalIsOpen(true);
   };
 
-  const openModalwithNew = () => {
+  const openEmptyModal = () => {
     setTodoInEdit(initialTodo);
     setModalIsOpen(true);
   };
+
   const [nameIsValid, setNameIsValid] = useState(true);
   const createNewOne = e => {
     e.preventDefault();
@@ -208,7 +237,6 @@ export default function ToDoProvider({ children }) {
       }
       return todo;
     });
-    console.log(tempTodos);
     setTodo(tempTodos);
     setModalIsOpen(false);
     setEditMode(false);
@@ -242,7 +270,7 @@ export default function ToDoProvider({ children }) {
     getDate,
     getTime,
     getEditModal,
-    openModalwithNew,
+    openEmptyModal,
     saveTodo,
     deleteTodo,
   };
