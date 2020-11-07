@@ -9,14 +9,14 @@
 .todo-header__edit-button {
   margin-left: 1rem;
 }
-.edit-button__icon-status {
+.edit-button__icon {
   margin-right: 1.3rem;
 }
 @media (max-width: 1130px) {
   .edit-button__title {
     display: none;
   }
-  .edit-button__icon-status {
+  .edit-button__icon {
     margin: 0;
   }
   .edit-button {

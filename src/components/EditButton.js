@@ -4,7 +4,7 @@ import './EditButton.css';
 import { StoreContext } from '../store';
 
 export default function EditButton({ id, type, title, className }) {
-  const { toggleStatusTodo, getEditModal, deleteTodo } = React.useContext(
+  const { toggleStatusTodo, openEditModal, deleteTodo } = React.useContext(
     StoreContext
   );
 
@@ -14,7 +14,7 @@ export default function EditButton({ id, type, title, className }) {
       func = toggleStatusTodo;
       break;
     case 'edit':
-      func = getEditModal;
+      func = openEditModal;
       break;
     case 'delete':
       func = deleteTodo;
@@ -29,7 +29,7 @@ export default function EditButton({ id, type, title, className }) {
       onClick={() => func(id)}
     >
       <div
-        className={`edit-button__icon-status icon-status icon-status_${className}`}
+        className={`edit-button__icon icon icon_${className}`}
       ></div>
       <div className='edit-button__text text_size-small'>{title}</div>
     </button>
