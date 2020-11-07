@@ -7,11 +7,12 @@ export default function Menu() {
     statusFilter: [statusFilter],
     priority: [priority],
     priorityIsOpen: [priorityIsOpen, setPriorityIsOpen],
+    menuIsOpen: [menuIsOpen],
     filterStatus,
   } = React.useContext(StoreContext);
 
   return (
-    <div className='Menu'>
+    <div className={`Menu Menu_${menuIsOpen ? 'opened' : 'closed'}`}>
       <div className='status Menu__block-buttons'>
         {statusFilter.map(item => {
           return (
@@ -23,7 +24,7 @@ export default function Menu() {
               onClick={() => filterStatus(item.type)}
             >
               <div
-                className={`icon-status status-button__icon-status icon-status_${item.type}`}
+                className={`icon status-button__icon-status icon_${item.type}`}
               ></div>
               {item.name}
             </button>
@@ -32,11 +33,11 @@ export default function Menu() {
       </div>
       <div className='priority'>
         <button
-          className='button priority-main-button Menu__priority-main-button '
+          className='button priority-main-button text_medium-weight Menu__priority-main-button '
           onClick={() => setPriorityIsOpen(!priorityIsOpen)}
         >
           <div
-            className={`main-btn__icon main-btn__icon_${
+            className={`priority-main-btn__icon priority-main-btn__icon_${
               priorityIsOpen ? 'opened' : 'closed'
             }`}
           ></div>

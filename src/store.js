@@ -72,6 +72,8 @@ export default function ToDoProvider({ children }) {
     },
   ]);
 
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
+
   const [filteredTodos, setFilteredTodo] = useState(todos);
   const [statusFilter, setStatusFilter] = useState([
     { name: 'Новые', type: 'new', current: false },
@@ -188,7 +190,7 @@ export default function ToDoProvider({ children }) {
     return slugify(tempText);
   };
 
-  const getEditModal = id => {
+  const openEditModal = id => {
     let tempTodo = todos.find(todo => todo.id === id);
     setTodoInEdit(tempTodo);
     setEditMode(true);
@@ -260,6 +262,7 @@ export default function ToDoProvider({ children }) {
     modalIsOpen: [modalIsOpen, setModalIsOpen],
     todoInEdit: [todoInEdit, setTodoInEdit],
     editMode: [editMode, setEditMode],
+    menuIsOpen: [menuIsOpen, setMenuIsOpen],
     filterStatus,
     nameIsValid,
     toggleStatusTodo,
@@ -269,7 +272,7 @@ export default function ToDoProvider({ children }) {
     createNewOne,
     getDate,
     getTime,
-    getEditModal,
+    openEditModal,
     openEmptyModal,
     saveTodo,
     deleteTodo,
