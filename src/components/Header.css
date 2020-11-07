@@ -6,17 +6,13 @@
   background-color: #f2994a;
   width: 100%;
 }
-.Header__logo {
+.logo {
   text-decoration: none;
-}
-.Header__logo_outline-shadow {
   -webkit-text-stroke: 1px #e0e0e0;
-}
-.Header__logo_shadow {
   text-shadow: 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
 }
-.Header__button_shadow {
-  box-shadow: 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
+.Header__logo {
+  margin-right: auto;
 }
 .button-plus {
   position: relative;
@@ -25,6 +21,7 @@
   background-color: #f2f2f2;
   border-radius: 50%;
   border: 1px solid #e0e0e0;
+  box-shadow: 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
 }
 .button-plus:after,
 .button-plus:before {
@@ -44,4 +41,29 @@
 .button-plus:before {
   width: 0.25rem;
   height: 2rem;
+}
+@media (max-width: 990px) {
+  .button-plus {
+    width: 3rem;
+    height: 3rem;
+    box-shadow: none;
+  }
+  .button-plus:after {
+    width: 1.6rem;
+    height: 0.2rem;
+  }
+  .button-plus:before {
+    width: 0.2rem;
+    height: 1.6rem;
+  }
+  .Header {
+    padding: 0.5rem 1rem;
+  }
+  .logo {
+    font-size: 2.4rem;
+    font-weight: 700;
+    text-shadow: none;
+    -webkit-text-stroke: 0px;
+    /* box-shadow: none; */
+  }
 }

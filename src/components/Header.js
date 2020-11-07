@@ -4,18 +4,13 @@ import { Link } from 'react-router-dom';
 import { StoreContext } from '../store';
 
 export default function Header() {
-  const { openModalwithNew } = React.useContext(StoreContext);
+  const { openEmptyModal } = React.useContext(StoreContext);
 
   return (
     <header className='Header'>
+      <button className='button'></button>
       <Link
-        className='
-      Header__logo 
-      Header__logo_outline-shadow 
-      Header__logo_shadow
-      text_extra-light-color
-      text_black-weight
-      text_size-huge'
+        className='logo Header__logo text_size-huge text_black-weight text_extra-light-color'
         to='/'
       >
         To-Do List
@@ -25,7 +20,7 @@ export default function Header() {
       button button-plus 
       Header__button_outline-shadow 
       Header__button_shadow'
-        onClick={openModalwithNew}
+        onClick={openEmptyModal}
       ></button>
     </header>
   );
