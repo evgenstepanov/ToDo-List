@@ -14,6 +14,12 @@ export default function ModalBlock() {
     deleteTodo,
   } = React.useContext(StoreContext);
 
+  const handleCancelButton = e => {
+    e.preventDefault();
+    setModalIsOpen(false);
+    setEditMode(false);
+  };
+
   let func = editMode
     ? e => {
         e.preventDefault();
@@ -25,13 +31,17 @@ export default function ModalBlock() {
     return (
       <div className='ModalBlock'>
         <form className='modal-form'>
-          <h1 className='modal-title modal-form__item text_dark-color text_size-big text_regular-weight'>
+          <h1 className='modal-title modal-form__modal-title modal-form__item text_dark-color text_size-big text_regular-weight'>
             {editMode ? 'Редактирование задачи' : 'Создание задачи'}
           </h1>
+          <button
+            className='button modal-form__button_cancel'
+            onClick={handleCancelButton}
+          ></button>
           <label className='modal-label modal-form__item modal-form__name'>
             <div className='modal-label__text text_size-small'>Название</div>
             <input
-              className={`input modal-form__input-name text_size-regular${
+              className={`input text_size-regular${
                 nameIsValid ? '' : ' warning'
               }`}
               type='text'
@@ -46,11 +56,10 @@ export default function ModalBlock() {
               </p>
             )}
           </label>
-          <label className='modal-label modal-form__date text_size-small'>
+          <label className='modal-label modal-form__item modal-form__date text_size-small'>
             <div className='modal-label__text text_size-small'>Дедлайн</div>
-            <div className='input-icon input-icon_calendar'></div>
             <input
-              className='input modal-form__input-date text_size-regular'
+              className='input modal-label__input_img-calendar text_size-regular'
               type='text'
               name='date'
               placeholder='ДД.ММ.ГГГГ, ММ:ЧЧ'
@@ -60,9 +69,8 @@ export default function ModalBlock() {
           </label>
           <label className='modal-label modal-form__item modal-form__priority text_size-small'>
             <div className='modal-label__text text_size-small'>Приоритет</div>
-            <div className='input-icon input-icon_arrow'></div>
             <select
-              className='input modal-form__input-priority text_size-regular'
+              className='input modal-label__input_img-arrow-down modal-label__input_arrow-disable text_size-regular'
               type='text'
               name='priority'
               value={todoInEdit.priority}
@@ -87,7 +95,7 @@ export default function ModalBlock() {
               onChange={handleInput}
             ></input>
           </label>
-          <label className='modal-label modal-form__item modal-form__description text_size-small'>
+          <label className='modal-label modal-label_last modal-form__item modal-form__description text_size-small'>
             <div className='modal-label__text text_size-small'>Описание</div>
             <textarea
               className='input modal-form__input-description text_size-regular'
@@ -107,11 +115,7 @@ export default function ModalBlock() {
             ) : null}
             <button
               className='button modal-btn block-buttons__button_cancel'
-              onClick={e => {
-                e.preventDefault();
-                setModalIsOpen(false);
-                setEditMode(false);
-              }}
+              onClick={handleCancelButton}
             >
               Отменить
             </button>
