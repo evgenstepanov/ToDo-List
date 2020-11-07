@@ -12,11 +12,11 @@
   height: 30px;
   background: url(../img/icons.svg) 0px -40px;
   margin-right: 1rem;
+  padding-right: 1rem;
   cursor: pointer;
+  border-right: 1px solid #c4c4c4;
 }
 .full-todo__title {
-  border-left: 1px solid #c4c4c4;
-  padding-left: 1rem;
   margin-right: auto;
 }
 .full-todo__todo-info-bar {
@@ -49,4 +49,73 @@
 }
 .full-todo__description {
   text-align: justify;
+}
+@media (max-width: 1130px) {
+  .todo-info-bar {
+    padding: 2rem 0 2rem 2rem;
+  }
+  .todo-info-block {
+    padding-right: 2rem;
+    margin-right: 2rem;
+  }
+}
+@media (max-width: 990px) {
+  .todo-header {
+    padding-bottom: 1rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+  }
+  .todo-info-bar {
+    position: relative;
+    padding: 0 1rem;
+    flex-wrap: wrap;
+    border-radius: 0;
+  }
+  .todo-info-bar::after {
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    content: '';
+    height: 1px;
+    width: calc(100% - 2rem);
+    background: #f2f2f2;
+    transform: translateY(-50%);
+  }
+  .todo-info-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.8rem 0;
+    margin-right: 0;
+    border: 0;
+    width: 50%;
+  }
+  .full-todo__title,
+  .todo-info-block__data,
+  .full-todo__description {
+    font-size: 1.2rem;
+  }
+  .full-todo__description {
+    margin: 0 1rem;
+  }
+  .todo-info-block__title {
+    font-size: 1rem;
+  }
+  .full-todo__arrow-back {
+    margin-right: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  .todo-info-block__color {
+    height: 1rem;
+    width: 3rem;
+  }
+  .full-todo__todo-header {
+    margin-bottom: 1rem;
+  }
+  .todo-info-block__title {
+    margin-bottom: 0;
+  }
+  .full-todo__todo-info-bar {
+    margin-bottom: 1rem;
+  }
 }
