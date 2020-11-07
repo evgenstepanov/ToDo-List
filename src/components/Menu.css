@@ -13,7 +13,7 @@
   padding: 0.8rem 1rem 0.8rem 1.3rem;
   border-radius: 0.5rem;
 }
-.icon-status {
+.icon {
   width: 24px;
   height: 24px;
 }
@@ -49,24 +49,53 @@
   padding: 1rem;
   border-bottom: 1px solid #c4c4c4;
 }
-.main-btn__icon {
-  width: 30px;
-  height: 30px;
+.priority-main-btn__icon {
+  width: 24px;
+  height: 24px;
   margin-right: 1rem;
 }
-.main-btn__icon_opened {
+.priority-main-btn__icon_opened {
   background-image: url(../img/icons.svg);
-  background-position: -129px -40px;
+  background-position: -132px -42px;
 }
-.main-btn__icon_closed {
+.priority-main-btn__icon_closed {
   background-image: url(../img/icons.svg);
-  background-position: -44px -40px;
+  background-position: -44px -43px;
 }
-@media (max-width: 320px) {
+@media (max-width: 990px) {
   .Menu {
     position: absolute;
+    z-index: 1;
+    height: calc(100% - 40px);
+    width: 26rem;
+    padding: 2rem 1rem 0 1rem;
+    background-color: #e5e5e5cc;
   }
-  .todo__text {
-    max-width: 117px;
+  .Menu_closed {
+    display: none;
+  }
+  .Menu_opened {
+    display: block;
+  }
+  .status-button {
+    font-size: 1.2rem;
+    padding: 0.8rem 1rem 0.8rem 1rem;
+  }
+  .status-button__icon-status {
+    margin-right: 2rem;
+  }
+  .priority-main-button {
+    font-size: 1.2rem;
+  }
+  .priority-main-btn__icon {
+    margin-right: 2rem;
+  }
+  .priority-button {
+    font-size: 1.2rem;
+    padding: 0.95rem 1rem 0.95rem 5.4rem;
+  }
+  .icon {
+    width: 19px;
+    height: 19px;
   }
 }
