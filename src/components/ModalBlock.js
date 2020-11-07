@@ -109,7 +109,7 @@ export default function ModalBlock() {
           <div className='block-buttons modal-form__block-buttons'>
             {editMode ? (
               <button
-                className='button block-buttons__button_delete'
+                className='button icon_delete block-buttons__button_delete'
                 onClick={() => deleteTodo(todoInEdit.id)}
               ></button>
             ) : null}

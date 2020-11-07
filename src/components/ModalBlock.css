@@ -119,6 +119,7 @@
 .block-buttons {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   width: 100%;
   padding-top: 2rem;
   border-top: 1px solid #e0e0e0;
@@ -132,7 +133,6 @@
 .block-buttons__button_delete {
   width: 30px;
   height: 30px;
-  background: url(../img/icons.svg) 60px 0px;
   margin-right: auto;
 }
 @media (max-width: 1130px) {
@@ -191,5 +191,10 @@
   }
   .modal-form__warning {
     font-size: 1rem;
+  }
+  .block-buttons__button_delete {
+    width: 20px;
+    height: 20px;
+    margin-left: 1rem;
   }
 }
