@@ -31,7 +31,7 @@ export default function EditButton({ id, type, title, className }) {
       <div
         className={`edit-button__icon-status icon-status icon-status_${className}`}
       ></div>
-      <div className='text_size-small'>{title}</div>
+      <div className='edit-button__text text_size-small'>{title}</div>
     </button>
   );
 }

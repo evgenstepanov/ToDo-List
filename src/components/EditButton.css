@@ -12,7 +12,7 @@
 .edit-button__icon-status {
   margin-right: 1.3rem;
 }
-@media (max-width: 1024px) {
+@media (max-width: 1130px) {
   .edit-button__title {
     display: none;
   }
@@ -21,5 +21,8 @@
   }
   .edit-button {
     padding: 0.8rem;
+  }
+  .edit-button__text{
+    display: none;
   }
 }
