@@ -66,23 +66,29 @@
   display: flex;
   flex: 1;
 }
-.icon-status_new {
-  background-image: url(../img/icons.svg);
-  background-position: -3px -3px;
+.icon_new {
+  background-image: url(../img/new.svg);
+  background-size: contain;
 }
-.icon-status_done {
-  background-image: url(../img/icons.svg);
-  background-position: -48px -3px;
+.icon_done {
+  background-image: url(../img/done.svg);
+  background-size: contain;
 }
-.icon-status_all {
-  background-image: url(../img/icons.svg);
-  background-position: -90px -3px;
+.icon_all {
+  background-image: url(../img/all.svg);
+  background-size: contain;
 }
-.icon-status_delete {
-  background-image: url(../img/icons.svg);
-  background-position: -177px -3px;
+.icon_delete {
+  background-image: url(../img/delete.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 50% 0;
 }
-.icon-status_edit {
-  background-image: url(../img/icons.svg);
-  background-position: -132px -3px;
+.icon_delete:hover {
+  background-image: url(../img/delete.svg);
+  background-size: contain;
+}
+.icon_edit {
+  background-image: url(../img/edit.svg);
+  background-size: contain;
 }
