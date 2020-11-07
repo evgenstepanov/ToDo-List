@@ -34,6 +34,9 @@
   margin-right: 4rem;
   border-right: 1px solid #c4c4c4;
 }
+.todo-info-block__icon-status {
+  display: none;
+}
 .todo-info-block_last {
   padding: 0;
   margin: 0;
@@ -89,6 +92,14 @@
     margin-right: 0;
     border: 0;
     width: 50%;
+  }
+  .todo-info-block__status {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .todo-info-block__icon-status {
+    display: block;
+    margin-right: 0.8rem;
   }
   .full-todo__title,
   .todo-info-block__data,

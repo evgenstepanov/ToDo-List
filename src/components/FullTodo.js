@@ -37,11 +37,14 @@ export default function FullTodo() {
         />
       </div>
       <div className='todo-info-bar full-todo__todo-info-bar'>
-        <div className='todo-info-block'>
-          <div className='todo-info-block__title text_regular-weight text_size-small text_light-color'>
-            Статус задачи
+        <div className='todo-info-block todo-info-block__status'>
+          <div className={`icon todo-info-block__icon-status icon_${todo.status}`}></div>
+          <div className='todo-info-block__container'>
+            <div className='todo-info-block__title text_regular-weight text_size-small text_light-color'>
+              Статус задачи
+            </div>
+            <div className='todo-info-block__data'>{todo.statusText}</div>
           </div>
-          <div className='todo-info-block__data'>{todo.statusText}</div>
         </div>
         <div className='todo-info-block'>
           <div className='todo-info-block__title text_regular-weight text_size-small text_light-color'>
