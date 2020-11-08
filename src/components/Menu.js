@@ -5,10 +5,11 @@ import { StoreContext } from '../store';
 export default function Menu() {
   const {
     statusFilter: [statusFilter],
-    priority: [priority],
+    priorityFilter: [priorityFilter],
     priorityIsOpen: [priorityIsOpen, setPriorityIsOpen],
     menuIsOpen: [menuIsOpen],
-    filterStatus,
+    setFilterStatus,
+    setFilterPriority,
   } = React.useContext(StoreContext);
 
   return (
@@ -21,7 +22,7 @@ export default function Menu() {
               className={`button status-button ${
                 item.current ? 'button_current ' : ''
               }text_medium-weight`}
-              onClick={() => filterStatus(item.type)}
+              onClick={() => setFilterStatus(item.type)}
             >
               <div
                 className={`icon status-button__icon-status icon_${item.type}`}
@@ -48,13 +49,14 @@ export default function Menu() {
             priorityIsOpen ? 'priority-container_opened' : ''
           }`}
         >
-          {priority.map(item => {
+          {priorityFilter.map(item => {
             return (
               <button
                 key={item.name}
-                className={`button priority-button ${
+                className={`button priority-button text_regular-weight ${
                   item.current ? ' button_current' : ''
-                }text_regular-weight`}
+                }`}
+                onClick={() => setFilterPriority(item.type)}
               >
                 {item.name}
               </button>

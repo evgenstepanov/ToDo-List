@@ -1,22 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import { transliterate as tr, slugify } from 'transliteration';
+import { transliterate as slugify } from 'transliteration';
 
 export const StoreContext = React.createContext();
 export default function ToDoProvider({ children }) {
   const [todos, setTodo] = useState([
     {
       id: 1,
-      name: 'Сходить в магазин',
-      slug: 'shodit-v-magazin',
+      name: 'Приготовить лазанью',
+      slug: 'prigotovit-lazanu',
       status: 'done',
       statusText: 'Выполнена',
       priority: 'high',
       priorityText: 'Высокий',
       color: '#F2C94C',
-      date: '11.11.2020, 10:18',
+      date: '12.12.2020, 20:30',
       description:
-        'Огибающая семейства поверхностей, конечно, естественно трансформирует интеграл по бесконечной области. Однако не все знают, что ортогональный определитель правомочен. Функция B(x,y) поддерживает интеграл от функции комплексной переменной, откуда следует доказываемое равенство. Линейное уравнение категорически масштабирует линейно зависимый критерий сходимости Коши, что неудивительно. Геометрическая прогрессия, как следует из вышесказанного, детерменирована. Интеграл Гамильтона оправдывает интеграл от функции, имеющий конечный разрыв. По сути, прямоугольная матрица оправдывает аксиоматичный интеграл от функции, обращающейся в бесконечность вдоль линии, при этом, вместо 13 можно взять любую другую константу.',
+        'Собраться с мыслями, составить список продуктов, одеться, отчаяться, установить яндекс еду',
     },
     {
       id: 2,
@@ -24,51 +24,61 @@ export default function ToDoProvider({ children }) {
       slug: 'pomit-mashinu',
       status: 'done',
       statusText: 'Выполнена',
-      priority: 'high',
-      priorityText: 'Высокий',
+      priority: 'medium',
+      priorityText: 'Средний',
       color: '#EB0000',
-      date: '11.11.2020, 10:18',
+      date: '30.11.2020, 23:00',
       description:
-        'Взять себя в руки, взять губку, налить воды, налить моющего средства, попросить помыть машину жену',
+        'Нагуглить ближайшую мойку, позвонить, записаться, помыться, ждать дождя',
     },
     {
       id: 3,
-      name: 'Помыть кошку',
-      slug: 'pomit-koshku',
-      status: 'new',
-      statusText: 'Новое',
+      name: 'Купить собаку',
+      slug: 'kupit-sobaku',
+      status: 'done',
+      statusText: 'Выполнена',
       priority: 'low',
       priorityText: 'Низкий',
       color: '#EB1090',
-      date: '11.11.2020, 10:18',
-      description:
-        'Взять себя в руки, взять губку, налить воды, налить моющего средства, попросить помыть машину жену',
+      date: '19.11.2020, 10:20',
+      description: 'Поехать в питомник, нырнуть в щенков, забрать всех домой',
     },
     {
       id: 4,
-      name: 'Проводить',
-      slug: 'provodit-vrema',
+      name: 'Выбросить мусор',
+      slug: 'vibrosit-musor',
       status: 'new',
       statusText: 'Новая',
-      priority: 'medium',
-      priorityText: 'Средний',
+      priority: 'high',
+      priorityText: 'Высокий',
       color: '#EB5757',
-      date: '11.11.2020, 10:18',
+      date: '31.12.2020, 08:00',
       description:
-        'Взять себя в руки, взять губку, налить воды, налить моющего средства, попросить помыть машину жену',
+        'Накопить два пакета мусора, проснуться от запаха, проветрить, достать третий пакет',
     },
     {
       id: 5,
-      name: 'Проводить',
+      name: 'Починить полку',
       slug: 'provodit-vrema',
       status: 'new',
       statusText: 'Новая',
       priority: 'medium',
       priorityText: 'Средний',
       color: '#EB5757',
-      date: '11.11.2020, 10:18',
-      description:
-        'Взять себя в руки, взять губку, налить воды, налить моющего средства, попросить помыть машину жену',
+      date: '26.11.2020, 19:10',
+      description: 'Приготовить шуруповерт, молоток и скотч',
+    },
+    {
+      id: 6,
+      name: 'Сходить в театр',
+      slug: 'provodit-vrema',
+      status: 'new',
+      statusText: 'Новая',
+      priority: 'low',
+      priorityText: 'Низкий',
+      color: '#EB5757',
+      date: '29.11.2020, 19:00',
+      description: 'Погладить пиджак, отключить телефон',
     },
   ]);
 
@@ -80,33 +90,48 @@ export default function ToDoProvider({ children }) {
     { name: 'Выполненные', type: 'done', current: false },
     { name: 'Все', type: 'all', current: true },
   ]);
-  const [priority, setPriority] = useState([
+  const [priorityFilter, setPriorityFilter] = useState([
     { name: 'Высокий', type: 'high', current: false },
-    { name: 'Средний', type: 'med', current: false },
+    { name: 'Средний', type: 'medium', current: false },
     { name: 'Низкий', type: 'low', current: false },
   ]);
 
-  const filterStatus = type => {
+  const setFilterStatus = type => {
+    const tempPrioritysFilter = priorityFilter.map(i => {
+      return { ...i, current: false };
+    });
     const tempStatusFilter = statusFilter.map(i =>
       i.type === type ? { ...i, current: true } : { ...i, current: false }
     );
-    filterTodos(type);
+    setPriorityFilter(tempPrioritysFilter);
     setStatusFilter(tempStatusFilter);
   };
-  const filterTodos = type => {
-    const tempFilteredTodos =
-      type === 'all' ? todos : todos.filter(i => i.status === type);
-    setFilteredTodo(tempFilteredTodos);
+
+  const setFilterPriority = type => {
+    const tempPrioritysFilter = priorityFilter.map(i =>
+      i.type === type ? { ...i, current: true } : { ...i, current: false }
+    );
+    setPriorityFilter(tempPrioritysFilter);
   };
 
   useEffect(() => {
-    let activeStatus;
-    statusFilter.forEach(i => {
-      if (i.current === true) activeStatus = i.type;
-    });
-    filterTodos(activeStatus);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [todos]);
+    let tempTodos = [...todos];
+
+    const statusType = statusFilter.find(i => i.current === true).type;
+
+    const priorityBtnCurrent = priorityFilter.find(i => i.current === true);
+    const priorityType = priorityBtnCurrent ? priorityBtnCurrent.type : null;
+
+    const filteredTodosByStatus =
+      statusType === 'all'
+        ? tempTodos
+        : tempTodos.filter(i => i.status === statusType);
+
+    const filteredTodosByPriority = filteredTodosByStatus.filter(i =>
+      priorityType ? i.priority === priorityType : true
+    );
+    setFilteredTodo(filteredTodosByPriority);
+  }, [statusFilter, priorityFilter, todos]);
 
   const [priorityIsOpen, setPriorityIsOpen] = useState(true);
   const [fullTodo, setFullTodo] = useState({ isOpen: false, todoId: '' });
@@ -117,7 +142,7 @@ export default function ToDoProvider({ children }) {
       todo.id === id
         ? todo.status === 'new'
           ? ((todo.status = 'done'), (todo.statusText = 'Выполнена'))
-          : ((todo.status = 'new'), (todo.statusText = 'Новое'))
+          : ((todo.status = 'new'), (todo.statusText = 'Новая'))
         : todo
     );
     setTodo(tempTodos);
@@ -186,7 +211,7 @@ export default function ToDoProvider({ children }) {
   };
 
   const getSlug = text => {
-    let tempText = text.split(' ').join(', ');
+    let tempText = text.toLowerCase().split(' ').join('-');
     return slugify(tempText);
   };
 
@@ -256,14 +281,15 @@ export default function ToDoProvider({ children }) {
     todos: [todos, setTodo],
     filteredTodos: [filteredTodos, setFilteredTodo],
     statusFilter: [statusFilter, setStatusFilter],
-    priority: [priority, setPriority],
+    priorityFilter: [priorityFilter, setPriorityFilter],
     priorityIsOpen: [priorityIsOpen, setPriorityIsOpen],
     fullTodo: [fullTodo, setFullTodo],
     modalIsOpen: [modalIsOpen, setModalIsOpen],
     todoInEdit: [todoInEdit, setTodoInEdit],
     editMode: [editMode, setEditMode],
     menuIsOpen: [menuIsOpen, setMenuIsOpen],
-    filterStatus,
+    setFilterStatus,
+    setFilterPriority,
     nameIsValid,
     toggleStatusTodo,
     handleInput,
