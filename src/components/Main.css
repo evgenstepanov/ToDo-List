@@ -1,10 +1,10 @@
 .Main {
   flex: 1 0;
   background-color: #f2f2f2;
-  padding: 6rem 2rem;
+  padding: 6rem 2rem 0;
 }
 @media (max-width: 990px) {
   .Main {
-    padding: 1.5rem 0;
+    padding: 1.5rem 0 0;
   }
 }

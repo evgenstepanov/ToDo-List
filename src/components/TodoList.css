@@ -3,7 +3,7 @@
   width: 100%;
 }
 .todo {
-  border-top: 1px solid #c4c4c4;
+  border-top: 0.1rem solid #c4c4c4;
 }
 .todo__description {
   white-space: nowrap;
@@ -37,18 +37,19 @@
 }
 .todo-icons {
   position: absolute;
-  top: 23px;
-  left: 3px;
+  top: 48%;
+  left: 0.3rem;
+  transform: translateY(-50%);
 }
 .todo-icons__icon-status {
   margin-bottom: 0.4rem;
 }
 .todo__edit {
   position: absolute;
-  top: 25px;
+  top: 25%;
   right: 0px;
-  width: 24px;
-  height: 24px;
+  width: 2.4rem;
+  height: 2.4rem;
   background: url(../img/icons.svg) -130px -1px;
   cursor: pointer;
 }
@@ -68,9 +69,6 @@
   .todo__text {
     padding: 1rem 0 1rem 3rem;
     width: 30%;
-  }
-  .todo-icons {
-    top: 7px;
   }
   .table-todo__header-cell {
     padding-bottom: 0.5rem;
