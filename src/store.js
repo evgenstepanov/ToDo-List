@@ -59,7 +59,7 @@ export default function ToDoProvider({ children }) {
     {
       id: 5,
       name: 'Починить полку',
-      slug: 'provodit-vrema',
+      slug: 'pochinit-polku',
       status: 'new',
       statusText: 'Новая',
       priority: 'medium',
@@ -71,7 +71,7 @@ export default function ToDoProvider({ children }) {
     {
       id: 6,
       name: 'Сходить в театр',
-      slug: 'provodit-vrema',
+      slug: 'shodit-v-teatr',
       status: 'new',
       statusText: 'Новая',
       priority: 'low',
